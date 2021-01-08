@@ -2,3 +2,4 @@ htdocs/.DS_Store
 htdocs/IntelliBase/*
 .DS_Store
 .gitmodules
+mysql/data
