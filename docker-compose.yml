@@ -10,6 +10,8 @@ services:
     # tty: true
     environment:
       MYSQL_ROOT_PASSWORD: "password"
+      MYSQL_DATABASE: intelli_base 
+      TZ: Asia/Tokyo 
 
   phpmyadmin:
     depends_on:
