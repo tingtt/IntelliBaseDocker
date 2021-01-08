@@ -2,8 +2,8 @@
 
 ## Submodule repository
 
-[IntelliBaseHP](https://github.com/tingtt/IntelliBaseHP.git)
+[syugoudada/intelli_base](https://github.com/syugoudada/intelli_base.git)
 
 ```Shell
-$ git submodule add https://github.com/tingtt/IntelliBaseHP.git htdocs/IntelliBase
+$ git submodule add https://github.com/syugoudada/intelli_base.git htdocs/IntelliBase
 ```
