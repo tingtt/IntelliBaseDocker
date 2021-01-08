@@ -1,6 +1,6 @@
 # IntelliBase HP docker
 
-## submodule repository
+## Submodule repository
 
 [IntelliBaseHP](https://github.com/tingtt/IntelliBaseHP.git)
 
