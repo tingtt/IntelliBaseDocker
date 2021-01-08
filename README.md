@@ -27,7 +27,16 @@ IntelliBaseHPDocker$ docker-compose up -d
 mysql 8 のイメージをインストール済みで、認証方式が変更されない場合
 
 - mysql のバージョンを 5 に変更し、docker-compose.yml の 6 行目を削除して再ビルド
-  <br>or<br>
+
+```yml
+- image: mysql:8
+- command: --default-authentication-plugin=mysql_native_password
+
++ image: mysql:5
+```
+
+<br>or<br>
+
 - mysql 8 のイメージを初期化
 
 ```Shell
