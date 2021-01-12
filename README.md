@@ -43,5 +43,5 @@ mysql 8 のイメージをインストール済みで、認証方式が変更さ
 
 ```Shell
 $ docker-compose down --rmi all --volumes --remove-orphans
-$ build
+$ docker-compose build
 ```
