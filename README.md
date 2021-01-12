@@ -30,11 +30,15 @@ mysql 8 のイメージをインストール済みで、認証方式が変更さ
 
 - mysql のバージョンを 5 に変更し、docker-compose.yml の 6 行目を削除して再ビルド
 
-```yml
+```diff
 - image: mysql:8
 - command: --default-authentication-plugin=mysql_native_password
 
 + image: mysql:5
+```
+
+```shell
+$ docker-compsose build
 ```
 
 <br>or<br>
