@@ -1,4 +1,4 @@
 htdocs/IntelliBase/*
 .DS_Store
 .gitmodules
-mysql/data
+mysql/data/*
