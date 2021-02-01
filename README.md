@@ -7,7 +7,7 @@ IntelliBase web server with docker.
 [syugoudada/intelli_base](https://github.com/syugoudada/intelli_base.git)
 
 ```Shell
-$ git submodule add https://github.com/syugoudada/intelli_base.git htdocs/IntelliBase
+$ git submodule add -b develop https://github.com/syugoudada/intelli_base.git htdocs/IntelliBase
 $ cd htdocs/IntelliBase
 IntelliBase$ git checkout develop
 ```
