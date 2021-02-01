@@ -10,8 +10,8 @@ services:
     # restart: always
     # tty: true
     environment:
-      MYSQL_ROOT_PASSWORD: "password"
-      MYSQL_DATABASE: intelli_base 
+      MYSQL_ROOT_PASSWORD: "rootpass"
+      MYSQL_DATABASE: intelli_base
       TZ: Asia/Tokyo 
 
   phpmyadmin:
