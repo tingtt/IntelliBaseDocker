@@ -1010,6 +1010,23 @@ INSERT INTO `books` (`id`, `title`, `genre_id`, `author_id`, `description`, `pri
 -- --------------------------------------------------------
 
 --
+-- ビュー用の代替構造 `book_infomation`
+-- (実際のビューを参照するには下にあります)
+--
+CREATE TABLE `book_infomation` (
+`id` bigint(20) unsigned
+,`title` varchar(255)
+,`price` bigint(20) unsigned
+,`description` text
+,`evaluation_avg` double(8,2) unsigned
+,`genre_id` bigint(20) unsigned
+,`name` varchar(255)
+,`url` varchar(255)
+);
+
+-- --------------------------------------------------------
+
+--
 -- テーブルの構造 `genres`
 --
 
@@ -2506,6 +2523,15 @@ INSERT INTO `reviews` (`id`, `purchase_id`, `evaluation`, `title`, `description`
 (510, 83, 5, 'Sunt.', 'Queen, who had got burnt, and eaten up by two guinea-pigs, who were giving it a violent blow underneath her chin: it had finished this short speech, they all moved off, and she drew herself up.', '2020-12-14 06:20:33', NULL, NULL),
 (511, 512, 2, 'Placeat molestias aut veritatis.', 'Mock Turtle to the Classics master, though. He was an old Turtle--we used to it as you liked.\' \'Is that the Mouse in the sea. But they HAVE their tails fast in their proper places--ALL,\' he repeated.', '2020-12-14 06:20:33', NULL, NULL),
 (512, 20, 1, 'Minima placeat repellendus ut repellat.', 'Alice, a good opportunity for making her escape; so she sat still and said \'What else had you to learn?\' \'Well, there was room for her. \'I wish I had it written down: but I can\'t put it in time,\'.', '2020-12-14 06:20:33', NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- ビュー用の構造 `book_infomation`
+--
+DROP TABLE IF EXISTS `book_infomation`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `book_infomation`  AS SELECT `book`.`id` AS `id`, `book`.`title` AS `title`, `book`.`price` AS `price`, `book`.`description` AS `description`, `book`.`evaluation_avg` AS `evaluation_avg`, `book`.`genre_id` AS `genre_id`, `author`.`name` AS `name`, `author`.`url` AS `url` FROM (`books` `book` join `authors` `author`) WHERE `book`.`author_id` = `author`.`id` ORDER BY `book`.`id` ASC ;
 
 --
 -- ダンプしたテーブルのインデックス
