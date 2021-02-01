@@ -8,8 +8,6 @@ IntelliBase web server with docker.
 
 ```Shell
 $ git submodule add -b release-docker https://github.com/syugoudada/intelli_base.git htdocs/IntelliBase
-$ cd htdocs/IntelliBase
-IntelliBase$ git checkout develop
 ```
 
 ## Build
