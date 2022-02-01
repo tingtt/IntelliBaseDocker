@@ -5,34 +5,34 @@ services:
     image: mysql:8
     command: --default-authentication-plugin=mysql_native_password
     volumes:
-      - ./mysql/data:/var/lib/mysql
+      - db_data:/var/lib/mysql
       - ./mysql/init:/docker-entrypoint-initdb.d
-    # restart: always
+    restart: unless-stopped
     # tty: true
     environment:
       MYSQL_ROOT_PASSWORD: "rootpass"
       MYSQL_DATABASE: intelli_base
-      TZ: Asia/Tokyo 
+      TZ: Asia/Tokyo
 
-  phpmyadmin:
-    depends_on:
-      - mysql
-    image: phpmyadmin/phpmyadmin
-    environment:
-      PMA_HOST: mysql
-    restart: always
-    ports:
-      - "8080:80"
+  # phpmyadmin:
+  #   depends_on:
+  #     - mysql
+  #   image: phpmyadmin/phpmyadmin
+  #   environment:
+  #     PMA_HOST: mysql
+  #   restart: unless-stopped
+  #   ports:
+  #     - "8080:80"
 
   php-apache:
     build: ./php
     volumes:
-      - ./htdocs:/var/www/html
-    restart: always
+      - ./htdocs/IntelliBase:/var/www/html
+    restart: unless-stopped
     ports:
-      - "80:80"
+      - "53002:80"
     depends_on:
       - mysql
 
 volumes:
-  db_data: {}
+  db_data:
