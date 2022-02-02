@@ -24,15 +24,23 @@ services:
   #   ports:
   #     - "8080:80"
 
-  php-apache:
-    build: ./php
+  app:
+    build: ./php-fpm
     volumes:
       - ./htdocs/IntelliBase:/var/www/html
+    restart: unless-stopped
+
+  nginx:
+    image: nginx:1.21
+    volumes:
+      - ./htdocs/IntelliBase:/var/www/html
+      - ./proxy/conf.d:/etc/nginx/conf.d
+      - ./proxy/log:/var/log/nginx
     restart: unless-stopped
     ports:
       - "53002:80"
     depends_on:
-      - mysql
+      - app
 
 volumes:
   db_data:
