@@ -7,7 +7,13 @@ IntelliBase web server with docker.
 [syugoudada/intelli_base](https://github.com/syugoudada/intelli_base.git)
 
 ```Shell
-$ git submodule add -b release-docker https://github.com/syugoudada/intelli_base.git htdocs/IntelliBase
+$ git submodule update --init --recursive
+```
+
+or init submodule with clone.
+
+```Shell
+$ git clone --recursive https://github.com/tingtt/IntelliBaseDocker.git
 ```
 
 ## Build
